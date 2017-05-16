@@ -19,21 +19,33 @@
                 <th>ID</th>
                 <th>Pedido</th>
                 <th>Dono</th>
-                <th>Valor</th>
                 <th>Nome</th>
                 <th>Atualizacao</th>
+                <th>Valor</th>
                 
             </tr>
             <c:forEach var="pedido" items="${pedidos}">
                 <tr>
-                <td>${pedido.id} </a></td> 
-                <td>${pedido.pedido}</td> 
-                <td>${pedido.dono}</td> 
-                <td>${pedido.valor}</td>
-                <td>${pedido.nome}</td>
-                <td>${pedido.atualizacao}</td>
+                    <td>${pedido.id} </a></td> 
+                    <td>
+                        <a href="pedidos.html?pedido=${pedido.pedido}" 
+                           title="Buscar todos os itens relacionados a este pedido">
+                        ${pedido.pedido}</a></td> 
+                    <td>${pedido.dono}</td> 
+                    <td>${pedido.nome}</td>
+                    <td>${pedido.atualizacao}</td>
+                    <td>${pedido.valor}</td>
                 </tr>
             </c:forEach>
+            <tr>
+                <td colspan="5">Total:</td>
+                <td>
+                    <c:forEach var="pedido" items="${pedidos}">
+                        ${pedido.valor} +
+                    </c:forEach>
+                    ${soma}                   
+                </td>
+            </tr>
          </table>
         <a href="novo.html">Novo Pedido</a>
     </body>

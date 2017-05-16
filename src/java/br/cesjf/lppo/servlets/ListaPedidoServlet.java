@@ -25,6 +25,10 @@ public class ListaPedidoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
          List<Pedido> pedidos;
+         
+        if (request.getParameter("pedido")!=null) {
+            Long filtro = Long.parseLong("pedido");
+        }
         
         try {
             PedidoDAO dao = new PedidoDAO();

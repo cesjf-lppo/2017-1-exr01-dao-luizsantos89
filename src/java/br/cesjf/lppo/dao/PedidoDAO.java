@@ -12,13 +12,14 @@ import java.util.List;
 public class PedidoDAO {
      private final PreparedStatement opNovo;
      private final PreparedStatement opListar;
+     private final PreparedStatement opListarFiltro;
      
      
      public PedidoDAO ()throws Exception{
-            Connection conexao = ConnectionFactory.createConnection();
-                
-                opNovo  = conexao.prepareStatement("INSERT INTO Pedido (pedido, dono, valor, nome) VALUES(?, ?, ?, ?)");
-                opListar = conexao.prepareStatement("SELECT * FROM Pedido");
+        Connection conexao = ConnectionFactory.createConnection();
+        opNovo  = conexao.prepareStatement("INSERT INTO Pedido (pedido, dono, valor, nome) VALUES(?, ?, ?, ?)");
+        opListar = conexao.prepareStatement("SELECT * FROM Pedido");
+        opListarFiltro = conexao.prepareStatement("SELECT * FROM Pedido WHERE pedido = ?");
                
      }
      
@@ -36,12 +37,10 @@ public class PedidoDAO {
             throw new Exception("Erro ao inserir o contato", ex);
         }
     }
-     public List<Pedido> listAll() throws Exception{
+    
+    public List<Pedido> listAll() throws Exception{
         try {
             List<Pedido> pedidos = new ArrayList<>();
-            
-            
-           
             ResultSet resultado = opListar.executeQuery();
                 while(resultado.next()){
                     Pedido novoPedido = new Pedido();
@@ -54,7 +53,6 @@ public class PedidoDAO {
                     
                     pedidos.add(novoPedido);
                 }
-            
             
             return pedidos;
         } catch (SQLException ex){
