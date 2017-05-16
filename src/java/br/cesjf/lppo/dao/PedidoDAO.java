@@ -17,7 +17,7 @@ public class PedidoDAO {
      public PedidoDAO ()throws Exception{
             Connection conexao = ConnectionFactory.createConnection();
                 
-                opNovo  = conexao.prepareStatement("INSERT INTO Pedido (pedido, dono, valor, nome,) VALUES(?, ?, ?, ?)");
+                opNovo  = conexao.prepareStatement("INSERT INTO Pedido (pedido, dono, valor, nome) VALUES(?, ?, ?, ?)");
                 opListar = conexao.prepareStatement("SELECT * FROM Pedido");
                
      }

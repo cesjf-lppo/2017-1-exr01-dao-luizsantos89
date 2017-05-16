@@ -34,6 +34,7 @@
                 <td>${pedido.atualizacao}</td>
                 </tr>
             </c:forEach>
-        
+         </table>
+        <a href="novo.html">Novo Pedido</a>
     </body>
 </html>

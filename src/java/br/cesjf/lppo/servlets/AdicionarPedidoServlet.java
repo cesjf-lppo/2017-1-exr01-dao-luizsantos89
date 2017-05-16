@@ -35,11 +35,11 @@ public class AdicionarPedidoServlet extends HttpServlet {
         
         try{
             PedidoDAO dao = new PedidoDAO();
-        dao.cria(novoPedido);
+            dao.cria(novoPedido);
         } catch(Exception ex){
             System.err.println(ex);
             request.setAttribute("mensagem", ex);
-            request.getRequestDispatcher("WEB-INF/novo-contato.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/novo-pedido.jsp").forward(request, response);
             return;
         }
         response.sendRedirect("pedidos.html");
