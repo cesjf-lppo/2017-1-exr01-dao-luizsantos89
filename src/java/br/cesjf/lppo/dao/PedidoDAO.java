@@ -52,7 +52,7 @@ public class PedidoDAO {
         opAtualiza.clearParameters();
         opAtualiza.setInt(1, novoPedido.getPedido());
         opAtualiza.setString(2, novoPedido.getDono());
-        opAtualiza.setFloat(3, novoPedido.getValor());
+        opAtualiza.setDouble(3, novoPedido.getValor());
         opAtualiza.setString(4, novoPedido.getNome());   
         opAtualiza.setLong(5,novoPedido.getId());
         opAtualiza.executeUpdate();

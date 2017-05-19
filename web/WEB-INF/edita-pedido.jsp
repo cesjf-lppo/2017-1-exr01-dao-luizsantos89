@@ -33,7 +33,8 @@
                     <td><input type="text" name="nome" value="${pedido.nome}"/></td>
                 </tr>
                 <tr>
-                    <td colspan="2" align="right"><button type="submit">Enviar</button></td>
+                    <td><a href="lista.html"><button>Cancelar</button></a></td>
+                    <td align="right"><button type="submit">Enviar</button></td>
                 </tr>
                 <input type="hidden" name="id" value="${pedido.id}" />
             </table>   

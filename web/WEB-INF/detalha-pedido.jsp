@@ -24,6 +24,18 @@
             </tr>
             <c:forEach var="pedido" items="${pedidos}">
                 <tr>
+                    <td>
+                        <a href="edita.html?id=${pedido.id}" 
+                           title="Edita os dados desse pedido">
+                        ${pedido.id} </a>
+                    </td> 
+                    <td>
+                        <a href="detalhes.html?pedido=${pedido.pedido}" 
+                           title="Buscar todos os itens relacionados a este pedido">
+                        ${pedido.pedido}</a></td> 
+                    <td><a href="detalhes.html?dono=${pedido.dono}" 
+                           title="Buscar todos os itens relacionados a este dono">
+                            ${pedido.dono}</a></td> 
                     <td>${pedido.id} </a></td> 
                     <td>${pedido.dono}</td> 
                     <td>${pedido.nome}</td>
