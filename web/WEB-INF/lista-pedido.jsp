@@ -27,7 +27,7 @@
             <c:forEach var="pedido" items="${pedidos}">
                 <tr>
                     <td>
-                        <a href="edita.html?pedido=${pedido.pedido}" 
+                        <a href="edita.html?id=${pedido.id}" 
                            title="Edita os dados desse pedido">
                         ${pedido.id} </a>
                     </td> 

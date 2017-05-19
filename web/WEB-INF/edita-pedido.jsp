@@ -12,6 +12,31 @@
         <title>Edita pedido</title>
     </head>
     <body>
+        <h1> Editar pedido ${pedido.pedido} </h1>
         
+        <form method="post">
+            <table>
+                <tr>
+                    <td>Pedido: </td>
+                    <td><input type="text" name="pedido" value="${pedido.pedido}"/></td>
+                </tr>
+                <tr>
+                    <td>Dono: </td>
+                    <td><input type="text" name="dono" value="${pedido.dono}"/></td>
+                </tr>
+                <tr>
+                    <td>Valor: </td>
+                    <td><input type="text" name="valor" value="${pedido.valor}"/></td>
+                </tr>
+                <tr>
+                    <td>Nome: </td>
+                    <td><input type="text" name="nome" value="${pedido.nome}"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="right"><button type="submit">Enviar</button></td>
+                </tr>
+                <input type="hidden" name="id" value="${pedido.id}" />
+            </table>   
+        </form>
     </body>
 </html>
