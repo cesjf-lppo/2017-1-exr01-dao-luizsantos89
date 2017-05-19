@@ -1,17 +1,17 @@
-<%-- 
-    Document   : edita-pedido
-    Created on : 19/05/2017, 14:40:06
-    Author     : luizs
---%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Edita pedido</title>
+        <title>Editar Pedido</title>
+        <link rel="stylesheet" href="CSS/estilo.css"/>
     </head>
     <body>
+    <center>
+        <div id="pagina">
+        <%@include file="jspf/menu.jspf" %>
         <h1> Editar pedido ${pedido.pedido} </h1>
         
         <form method="post">
@@ -39,5 +39,7 @@
                 <input type="hidden" name="id" value="${pedido.id}" />
             </table>   
         </form>
+        </div>
+    </center>
     </body>
 </html>

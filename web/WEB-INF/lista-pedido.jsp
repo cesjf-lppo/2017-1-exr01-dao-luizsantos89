@@ -11,6 +11,7 @@
     <body>
     <center>
         <div id="pagina">
+        <%@include file="jspf/menu.jspf" %>
             <h1>Lista de Pedidos</h1>
              <table border="1">
 

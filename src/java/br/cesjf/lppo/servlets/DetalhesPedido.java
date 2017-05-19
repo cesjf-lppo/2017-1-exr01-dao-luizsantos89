@@ -32,7 +32,7 @@ public class DetalhesPedido extends HttpServlet {
         System.out.println(dono);
         
         List<Pedido> pedidos;
-        double resultado = 0;
+        String resultado = null;
         
         if (dono==null) {
             try {

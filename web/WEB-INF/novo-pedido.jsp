@@ -1,17 +1,16 @@
-<%-- 
-    Document   : novo-pedido
-    Created on : 08/05/2017, 21:54:52
-    Author     : alunoces
---%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Novo Pedido</title>
+        <link rel="stylesheet" href="CSS/estilo.css"/>
     </head>
     <body>
+    <center>
+        <div id="pagina">
         <%@include file="jspf/menu.jspf" %>
         <h1>Novo Pedido</h1>
         <div style ="color: red;">${mensagem}</div>
@@ -19,24 +18,26 @@
             <table>
                 <tr>
                     <td>Pedido: </td>
-                    <td><input type="text" name="pedido" placeholder="digite o pedido"/></td>
+                    <td><input type="text" name="pedido" placeholder="Digite o Pedido"/></td>
                 </tr>
                 <tr>
                     <td>Dono: </td>
-                    <td><input type="text" name="dono" placeholder="digite o dono"/></td>
+                    <td><input type="text" name="dono" placeholder="Digite o Dono"/></td>
                 </tr>
                 <tr>
                     <td>Valor: </td>
-                    <td><input type="text" name="valor" placeholder="digite o valor"/></td>
+                    <td><input type="text" name="valor" placeholder="Digite o Valor"/></td>
                 </tr>
                 <tr>
                     <td>Nome: </td>
-                    <td><input type="text" name="nome" placeholder=" digite o nome"/></td>
+                    <td><input type="text" name="nome" placeholder="Digite o Nome"/></td>
                 </tr>
                 <tr>
                     <td colspan="2" align="right"><button type="submit">Enviar</button></td>
                 </tr>
             </table>
         </form>
+        </div>
+    </center>
     </body>
 </html>

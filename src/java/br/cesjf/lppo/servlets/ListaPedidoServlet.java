@@ -25,7 +25,7 @@ public class ListaPedidoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         List<Pedido> pedidos;
-        double resultado = 0;
+        String resultado = null;
          
         try {
             PedidoDAO dao = new PedidoDAO();

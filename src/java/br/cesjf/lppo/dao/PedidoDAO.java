@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -98,12 +99,13 @@ public class PedidoDAO {
         }
     }
     
-    public double totalPedido() throws Exception{
+    public String totalPedido() throws Exception{
         try {
             ResultSet resultado = opValorTotal.executeQuery();
-            double valor = 0;
+            String valor = null; 
+            DecimalFormat df = new DecimalFormat("0.##");
             while(resultado.next()){
-                valor = resultado.getDouble(1);
+                valor = df.format(resultado.getDouble(1));
             }
             
             return valor;
@@ -112,14 +114,15 @@ public class PedidoDAO {
         }
     }
     
-    public double totalPedidoFiltro(Long filtro) throws Exception{
+    public String totalPedidoFiltro(Long filtro) throws Exception{
         try {
-            double valor = 0;
+            String valor = null; 
+            DecimalFormat df = new DecimalFormat("0.##");
             opValorTotalPedido.setLong(1, filtro);
             System.out.println(opValorTotalPedido);
             ResultSet resultado = opValorTotalPedido.executeQuery();
             while(resultado.next()){
-                valor = resultado.getDouble(1);
+                valor = df.format(resultado.getDouble(1));
             }            
             return valor;
         } catch (SQLException ex){
@@ -127,13 +130,14 @@ public class PedidoDAO {
         }
     }  
     
-    public double totalPedidoDono(String filtro) throws Exception{
+    public String totalPedidoDono(String filtro) throws Exception{
         try {
-            double valor = 0;
+            String valor = null; 
+            DecimalFormat df = new DecimalFormat("0.##");
             opValorTotalDono.setString(1, filtro);
             ResultSet resultado = opValorTotalDono.executeQuery();
             while(resultado.next()){
-                valor = resultado.getDouble(1);
+                valor = df.format(resultado.getDouble(1));
             }            
             return valor;
         } catch (SQLException ex){
